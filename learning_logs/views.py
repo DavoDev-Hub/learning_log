@@ -36,6 +36,6 @@ def new_topic(request):
     context = {'form': form}
     return render(request, 'learning_logs/new_topic.html', context)
 
-# Display a bank or invalid form.
+# Display a blank or invalid form.
     context = {'form': form}
     return render(request, 'learning_logs/new_topic.html', context)
