@@ -1,4 +1,7 @@
 from django.db import models
+from django import forms
+from .models import Topic
+
 
 class Topic(models.Model):
     """A topic the user is learning about."""
@@ -24,3 +27,10 @@ class Entry(models.Model):
             return self.text
         else:
             return f"{self.text[:50]}..."
+
+class TopicForm(forms.ModelForm):
+    """Form for creating and updating Topic instances."""
+    class Meta:
+        model = Topic
+        fields = ['text']
+        labels = {'text': ''}
